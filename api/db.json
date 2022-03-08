@@ -1,0 +1,52 @@
+{
+    "promotions": [
+        {
+            "id": 1,
+            "title": "Tenis StarWars",
+            "price": 1200,
+            "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Tenis 2",
+            "price": 1000,
+            "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Tenis 3",
+            "price": 500,
+            "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Tenis 4",
+            "price": 780,
+            "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+        }
+    ]
+    ,
+    "comments": [
+        {
+            "id": 1,
+            "comment": "utlra confortável",
+            "promotionId": 1
+        },
+        {
+            "id": 2,
+            "comment": "Redondo",
+            "promotionId": 2
+        },
+        {
+            "id": 3,
+            "comment": "Quadrado",
+            "promotionId": 3
+        },
+        {
+            "id": 4,
+            "comment": "Isósceles",
+            "promotionId": 4
+        }
+    ]
+
+}

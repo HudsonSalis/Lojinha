@@ -1,26 +1,26 @@
-import React from "react";
-import PromotionCard from "../../../components/Promotion/Card/Card"
-
-const promotion =  
-{
-"id": 1,
-"title": "Tenis StarWars",
-"price": 1200,
-"imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg",
-"comments": [
-  {
-    "id": 1,
-    "comment": "Ultra confortável"
-  }
-]  
-}
-
-
+import React, { useEffect, useState } from "react";
+import PromotionCard from "../../../components/Promotion/Card/Card";
+import axios from 'axios';
 
 
 const PagesPromotionSearch = () => {
+
+  const [promotions, setPromotions] = useState([]);
+
+
+  useEffect(()=> {
+    axios.get("http://localhost:3000/promotions?_embed=comments")
+    .then((response) => {
+      setPromotions(response.data);
+    }) 
+  },[])
+  
     return(
-        <PromotionCard promotion={promotion} />
+      <div>
+          {promotions.map((promotion) => (
+            <PromotionCard promotion={promotion} />
+          ))}
+      </div>
     )
 }
 
