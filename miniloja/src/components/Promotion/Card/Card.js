@@ -8,7 +8,7 @@ const PromotionCard = ( {promotion} )  => {
                 
                 <img alt="Tenis" src={promotion.imgURL}  width="100" height="100"/>
             
-                <Info>
+                <Info key={promotion.id}>
                     <h1>{promotion.title}</h1>
                     <span>R$ {promotion.price}</span>
                     <footer>
@@ -33,18 +33,19 @@ export default PromotionCard;
 
 
 const Layout = style.div`
-    text-align: center;
     display: flex;
     width: 100%;
-    height: 100vh;
     justify-content: center;
+    margin-bottom: 13px;
+  
+
     align-items: center;
     font-family: 'Roboto', sans-serif;
 `;
 
 const Item = style.div`
     display: flex;
-    width: 700px;
+    width: 100%;
     height: 120px;
 
     border: 1px solid black;
