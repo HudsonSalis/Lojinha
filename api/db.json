@@ -1,52 +1,56 @@
 {
-    "promotions":[
-        {
-            "id": 1,
-            "title": "Tenis StarWars",
-            "price": 650,
-            "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
-        },
-        {
-            "id": 2,
-            "title": "Fones de ouvido samsung",
-            "price": 135,
-            "imgURL": "https://m.media-amazon.com/images/I/51UK2cVHFkL._AC_SY450_.jpg"
-        },
-        {
-            "id": 3,
-            "title": "Camiseta Gucci",
-            "price": 1975,
-            "imgURL": "https://cdn.awsli.com.br/600x1000/866/866032/produto/41146004/e5b0dd8a5a.jpg"
-        },
-        {
-            "id": 4,
-            "title": "Patinete FireWater",
-            "price": 555,
-            "imgURL": "https://d1r6yjixh9u0er.cloudfront.net/Custom/Content/Products/17/30/1730_patinete-eletrico-essential-preto-p253_z1_637382122984057089.jpg"
-        }
-    ],
-
-    "comments": [
-        {
-            "id": 1,
-            "comment": "Para Corrida, ultra confortável",
-            "promotionId": 1
-        },
-        {
-            "id": 2,
-            "comment": "Espuma super confortável",
-            "promotionId": 2
-        },
-        {
-            "id": 3,
-            "comment": "Camiseta masculino, tamanho M, ",
-            "promotionId": 3
-        },
-        {
-            "id": 4,
-            "comment": "Patinete prateado para todas as idades",
-            "promotionId": 4
-        }
-    ]
-
+  "promotions": [
+    {
+      "id": 1,
+      "title": "Tenis BWhite",
+      "price": 650,
+      "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Fones de ouvido samsung",
+      "price": 135,
+      "imgURL": "https://m.media-amazon.com/images/I/51UK2cVHFkL._AC_SY450_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Camiseta Gucci",
+      "price": 1975,
+      "imgURL": "https://cdn.awsli.com.br/600x1000/866/866032/produto/41146004/e5b0dd8a5a.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Patinete FireWater",
+      "price": 555,
+      "imgURL": "https://d1r6yjixh9u0er.cloudfront.net/Custom/Content/Products/17/30/1730_patinete-eletrico-essential-preto-p253_z1_637382122984057089.jpg"
+    },
+    {
+      "title": "Caderno Preto ||",
+      "imgURL": "https://images-na.ssl-images-amazon.com/images/I/51LBWQZuuyL.__AC_SX300_SY300_QL70_ML2_.jpg",
+      "price": "199",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "comment": "Para Corrida, ultra confortável",
+      "promotionId": 1
+    },
+    {
+      "id": 2,
+      "comment": "Espuma super confortável",
+      "promotionId": 2
+    },
+    {
+      "id": 3,
+      "comment": "Camiseta masculino, tamanho M, ",
+      "promotionId": 3
+    },
+    {
+      "id": 4,
+      "comment": "Patinete prateado para todas as idades",
+      "promotionId": 4
+    }
+  ]
 }

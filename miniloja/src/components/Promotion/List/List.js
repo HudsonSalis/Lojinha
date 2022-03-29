@@ -2,18 +2,25 @@ import React from "react";
 import PromotionCard from "../Card/Card";
 //import style from "styled-components";
 
-const PromotionList = ({loading, promotion}) => {
+const PromotionList = ({loading, promotions}) => {
 
-  
-    if(loading){
+
+    if(loading || promotions === null){
         return(
             <div> Carregando...</div>
         )
     }
+    if(promotions.length === 0){
+        return <div> Nenhum resultado encontrado</div>;
+    }
+
+
     return(
         <div>
-            {promotion.map((promotion) => (
+            {promotions.map((promotion) => (
                 <PromotionCard promotion={promotion} />
+
+                
             ))}
         </div>
     )

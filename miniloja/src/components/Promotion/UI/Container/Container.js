@@ -5,8 +5,8 @@ import style from "styled-components";
 const UIContainer = ({ children }) => {
     return(
         <UIcontainer>
-        {children}
-    </UIcontainer>
+         {children}
+        </UIcontainer>
     )
 }
 

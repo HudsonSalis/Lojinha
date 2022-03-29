@@ -1,5 +1,6 @@
 import React from "react";
 import style from "styled-components";
+import { Link } from "react-router-dom";
 
 const PromotionCard = ( {promotion} )  => {
     return(
@@ -21,9 +22,12 @@ const PromotionCard = ( {promotion} )  => {
 
                             <div className="goToSite">IR PARA O SITE</div>
                         </div>
+                        <Link to={`edit/${promotion.id}`}>Editar </Link>
+
 
                     </footer>
                 </Info>
+
             </Item>
         </Layout>
     )
@@ -46,7 +50,7 @@ const Layout = style.div`
 const Item = style.div`
     display: flex;
     width: 100%;
-    height: 120px;
+    min-height: 120px;
 
     border: 1px solid black;
     border-radius: 8px;
@@ -89,6 +93,7 @@ const Info = style.div`
             margin-left: auto;
             margin-right: 15px;
             align-items: center;
+            margin-bottom: 10px;
 
             .goToSite{
                 color: green;
