@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
+
 import useApi from "../utils/UseApi";
 import {useNavigate} from 'react-router-dom'
 
@@ -15,12 +15,24 @@ const PromotionForm = ({id}) => {
 
     const [values, setValues] = useState(initialValues);    
     const navigate = useNavigate();
-    const [load, loadInfo] = useApi({
-        url: `http://localhost:3000/promotions/${id}`,
+    const [load] = useApi({
+        url: `/promotions/${id}`,
         method: 'get',
         onCompleted: (response) => {
             setValues(response.data);
         }
+    })
+
+    const [save] = useApi({
+        url: id ? `/promotions/${id}` : '/promotions',
+        method: id ? 'put' : 'post',
+        data: values,
+        onCompleted: (response) => {
+            if(!response.error){
+                navigate('/');
+            }
+        }
+     
     })
 
 
@@ -40,16 +52,7 @@ const PromotionForm = ({id}) => {
 
     function onSubmit(ev){
         ev.preventDefault();
-
-        const method = id ? 'put' : 'post';
-        const url = id 
-        ? `http://localhost:3000/promotions/${id}`
-        : 'http://localhost:3000/promotions'
-
-        axios[method](url, values)
-        .then((response) => {
-            navigate('/');
-        });
+        save();
     }
 
 

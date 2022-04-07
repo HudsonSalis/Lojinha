@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useRef } from "react";
 import useApi from "../utils/UseApi";
 import style from "styled-components";
 import PromotionList from "../Promotion/List/List";
 import { Link } from "react-router-dom";
 
 const PromotionSearch = () => {
+    const mountRef = useRef(null);
 
     const [search, setSearch] = useState('');
     const [load, loadInfo] = useApi({
+        debounceDelay: 1000,
         url: '/promotions',
         method: 'get',
         params: {
@@ -21,10 +22,15 @@ const PromotionSearch = () => {
     });
 
 
-    console.log(loadInfo.data)
+  console.log(loadInfo.data)
   useEffect(()=> {
-
-    load();
+    
+    load({
+         debounced: mountRef.current
+    });
+    if(!mountRef.current){
+        mountRef.current = true;
+    }
   },[search]);
 
     return(

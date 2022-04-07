@@ -2,7 +2,7 @@ import React from "react";
 import style from "styled-components";
 import { Link } from "react-router-dom";
 
-const PromotionCard = ( {promotion} )  => {
+const PromotionCard = ( {promotion, onClickComments} )  => {
     return(
         <Layout> 
             <Item>
@@ -16,12 +16,10 @@ const PromotionCard = ( {promotion} )  => {
                         <div className="comentario">
                             { promotion.comments.length > 0 && (<div>{promotion.comments[0].comment}</div>)}
                         </div>
-                        <div className="comentarios-irParaOsite">
+                        <button className="comentarios-irParaOsite" onClick={onClickComments}>
                             {promotion.comments.length} {" "}
                             {promotion.comments.length > 1 ? 'Comentários' : 'Comentário'}
-
-                            <div className="goToSite">IR PARA O SITE</div>
-                        </div>
+                        </button>
                         <Link to={`edit/${promotion.id}`}>Editar </Link>
 
 
@@ -95,13 +93,6 @@ const Info = style.div`
             align-items: center;
             margin-bottom: 10px;
 
-            .goToSite{
-                color: green;
-                border: 1px solid blue;
-                cursor: pointer;
-                margin-left: 5px;
-                padding: 5px;
-            }
         }
 
     }
