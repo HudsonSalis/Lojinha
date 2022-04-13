@@ -39,6 +39,9 @@ export default function useApi(config){
                 error
             })
         }
+        if(config.onCompleted) {
+            config.onCompleted(response);
+        }
      
     }
     return [

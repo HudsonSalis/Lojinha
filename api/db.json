@@ -7,10 +7,10 @@
       "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
     },
     {
-      "id": 2,
-      "title": "Fones de ouvido samsung",
-      "price": 135,
-      "imgURL": "https://m.media-amazon.com/images/I/51UK2cVHFkL._AC_SY450_.jpg"
+      "title": "TenisBlack",
+      "imgURL": "https://static.netshoes.com.br/produtos/tenis-olympikus-proof-masculino/88/2I2-1749-088/2I2-1749-088_zoom1.jpg?ts=1615412391&ims=544x",
+      "price": 150,
+      "id": 2
     },
     {
       "id": 3,
@@ -23,12 +23,6 @@
       "title": "Patinete FireWater",
       "price": 555,
       "imgURL": "https://a-static.mlcdn.com.br/618x463/patinete-infantil-dobravel-reforcado-color-50kg-inmetro-lotus/gastaki1/10025a/ed7eae7fcaa4aa8fdca95b243a6294f3.jpg"
-    },
-    {
-      "title": "Caderno Preto ||",
-      "imgURL": "https://images-na.ssl-images-amazon.com/images/I/51LBWQZuuyL.__AC_SX300_SY300_QL70_ML2_.jpg",
-      "price": "199",
-      "id": 5
     }
   ],
   "comments": [
@@ -36,24 +30,25 @@
       "id": 1,
       "comment": "Para Corrida, ultra confortável",
       "promotionId": 1,
-      "userId" : 1
+      "userId": 1
     },
     {
       "id": 2,
       "comment": "Espuma super confortável",
       "promotionId": 2,
-      "userId" : 2
-
+      "userId": 2
     },
     {
-      "id": 3,
-      "comment": "Camiseta masculino, tamanho M, ",
-      "promotionId": 3
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "Muito Bom",
+      "id": 3
     },
     {
-      "id": 4,
-      "comment": "Patinete prateado para todas as idades",
-      "promotionId": 4
+      "userId": 1,
+      "promotionId": 1,
+      "comment": "teste",
+      "id": 4
     }
   ],
   "users": [
@@ -64,7 +59,7 @@
     },
     {
       "id": 2,
-      "name": "Fulano",
+      "name": "Maria",
       "avatarUrl": "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
     }
   ]

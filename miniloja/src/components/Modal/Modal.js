@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import UIModal from "../Promotion/UI/Modal/Modal"
 import useApi from "../utils/UseApi";
 import PromotionModalCommentsTree from "./CommentsTree/CommentsTree";
+//import styled from "styled-components";
 
 const PromotionModal = ({promotionId , onClickClose}) => {
     const mountRef = useRef(null);
@@ -20,8 +21,7 @@ const PromotionModal = ({promotionId , onClickClose}) => {
 
     const [sendComment, sendCommentInfo] = useApi({
         url: '/comments',
-        method: 'post',
-      
+        method: 'POST'
     });
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const PromotionModal = ({promotionId , onClickClose}) => {
     },[]);
 
     async function onSubmit(ev){
-        ev.prevent.default();
+        ev.preventDefault();
         try{
             await sendComment({
                 data: {
@@ -44,9 +44,10 @@ const PromotionModal = ({promotionId , onClickClose}) => {
                 }
             });
             setComment('');
+          
         } catch(e){
 
-        }
+            }
       
     }
 

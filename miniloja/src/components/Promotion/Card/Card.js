@@ -19,10 +19,9 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
                         <button className="comentarios-irParaOsite" onClick={onClickComments}>
                             {promotion.comments.length} {" "}
                             {promotion.comments.length > 1 ? 'Comentários' : 'Comentário'}
+                       
                         </button>
                         <Link to={`edit/${promotion.id}`}>Editar </Link>
-
-
                     </footer>
                 </Info>
 

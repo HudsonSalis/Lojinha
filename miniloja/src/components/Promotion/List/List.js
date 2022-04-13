@@ -31,6 +31,7 @@ const PromotionList = ({loading, error, promotions}) => {
 
                 
             ))}
+            
             {
                 promotionId &&(
                     <PromotionModal 

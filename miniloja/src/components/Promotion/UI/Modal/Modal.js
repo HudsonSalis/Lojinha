@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark  } from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 const portalRoot = document.getElementById('portal-root');
 
@@ -12,7 +17,7 @@ const UIModal =  ({children, isOpen, onClickClose}) => {
     return ReactDOM.createPortal(
         <UiModalOverlay>
             <UiModal>
-                <UiModalCloseButton type="button"  onClick={onClickClose}>X</UiModalCloseButton>
+                <UiModalCloseButton type="button"  onClick={onClickClose}> <FontAwesomeIcon icon={faXmark } /> </UiModalCloseButton>
                 {children}
             </UiModal>
         </UiModalOverlay>,

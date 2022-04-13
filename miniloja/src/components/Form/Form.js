@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-
 import useApi from "../utils/UseApi";
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 
-const initialValues =
-{
+const initialValues = {
     title: '',
     imgURL: '',
     price: 0
@@ -13,37 +11,37 @@ const initialValues =
 
 const PromotionForm = ({id}) => {
 
+    const mountRef = useRef(null);
+
     const [values, setValues] = useState(initialValues);    
     const navigate = useNavigate();
+
     const [load] = useApi({
         url: `/promotions/${id}`,
         method: 'get',
         onCompleted: (response) => {
             setValues(response.data);
+            console.log(response.data)
         }
     })
 
     const [save] = useApi({
         url: id ? `/promotions/${id}` : '/promotions',
         method: id ? 'put' : 'post',
-        data: values,
         onCompleted: (response) => {
             if(!response.error){
                 navigate('/');
             }
         }
-     
     })
-
-
     useEffect(() => {
-      
         if(id){
-            load();
+            load({
+                debounced: mountRef.current
+            });
         }
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
-
 
     function onChange(ev) {
         const {name, value} = ev.target; 
@@ -52,7 +50,9 @@ const PromotionForm = ({id}) => {
 
     function onSubmit(ev){
         ev.preventDefault();
-        save();
+        save({
+            data: values
+        });
     }
 
 
@@ -61,23 +61,23 @@ const PromotionForm = ({id}) => {
             <h1>Promotion Show</h1>
             <h2>Nova Promoção</h2>
 
-            <Form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit}>
                 <FormGroup>
                     <LabelForm>Título</LabelForm>
-                    <input onChange={onChange} name="title" value={values.title} />
+                    <input id="title" onChange={onChange} type="text" name="title" value={values.title} />
                 </FormGroup>
                 <FormGroup>
-                    <LabelForm>Imagem (Link)</LabelForm>
-                    <input onChange={onChange} name="imgURL"  value={values.imgURL}/>
+                    <LabelForm htmlFor="imgUrl">Imagem (Link)</LabelForm>
+                    <input id="imgURL" onChange={onChange} type="text" name="imgURL"  value={values.imgURL}/>
                 </FormGroup>
                 <FormGroup>
                     <LabelForm>Preço</LabelForm>
-                    <input onChange={onChange} type="number" name="price"  value={values.price}/>
+                    <input id="price" onChange={onChange} type="number" name="price"  value={values.price}/>
                 </FormGroup>
 
-                <button  type="submit">Salvar</button>
+                <button type="submit">Salvar</button>
               
-            </Form>
+            </form>
 
 
         </div>
@@ -94,7 +94,7 @@ const LabelForm = styled.label`
     color: #555;
 `;
 
-const FormGroup = styled.form`
+const FormGroup = styled.div`
     display:flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -107,6 +107,3 @@ const FormGroup = styled.form`
     }
 `;
 
-const Form = styled.form`
-    padding-bottom: 20px;
-`;
