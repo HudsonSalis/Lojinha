@@ -21,7 +21,8 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
                             {promotion.comments.length > 1 ? 'Comentários' : 'Comentário'}
                        
                         </button>
-                        <Link to={`edit/${promotion.id}`}>Editar </Link>
+                        <Link className="editar" to={`edit/${promotion.id}`}>Editar </Link>
+                        
                     </footer>
                 </Info>
 
@@ -31,7 +32,6 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
 }
 
 export default PromotionCard;
-
 
 const Layout = style.div`
     display: flex;
@@ -49,7 +49,7 @@ const Item = style.div`
     width: 100%;
     min-height: 120px;
 
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
     align-items: flex-start;
 
@@ -82,8 +82,11 @@ const Info = style.div`
     footer{
         display: flex;
         align-items: center;
-
         width: 100%;
+
+        .comentario{
+            color: rgba(0,35,150);
+        }
 
         .comentarios-irParaOsite{
             display:flex;
@@ -92,7 +95,23 @@ const Info = style.div`
             align-items: center;
             margin-bottom: 10px;
 
+            border:none;
+            padding: 5px;
+            background-color: rgba(0,0,140,0.2);
+            color: blue;
+            cursor: pointer;
+            border-radius: 4px;
+
         }
+
+        .editar{
+            color: rgba(0,0,140,0.7);
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-right: 10px;
+            margin-bottom: 5px; 
+        }
+
 
     }
     

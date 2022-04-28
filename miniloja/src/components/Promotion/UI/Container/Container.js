@@ -19,4 +19,5 @@ export default UIContainer;
 const UIcontainer = style.div`
     max-width: 800px;
     margin: 30px auto;
+    
 `;
