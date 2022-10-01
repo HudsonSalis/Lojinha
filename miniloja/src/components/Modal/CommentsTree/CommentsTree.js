@@ -8,6 +8,7 @@ function getTree(list){
 
     const roots = [];
     const childrenByParentId = {};
+
     list.forEach((item) => {
         if(!item.parentId){
             roots.push(item);
@@ -16,21 +17,22 @@ function getTree(list){
 
         if(!childrenByParentId[item.parentId]){
             childrenByParentId[item.parentId] = [];
+            
         }
-
+      
         childrenByParentId[item.parentId].push(item);
     });
 
-        function buildNodes(nodes){
-            if(!nodes){
-                return null;
-            }
-            return nodes.map((node) => ({
-                ...node,
-                children: buildNodes(childrenByParentId[node.id])
-            }));
-        };
-        return buildNodes(roots)
+    function buildNodes(nodes){
+        if(!nodes){
+            return null;
+        }
+        return nodes.map((node) => ({
+            ...node,
+            children: buildNodes(childrenByParentId[node.id])
+        }));
+    };
+    return buildNodes(roots)
 };
 
 const PromotionModalCommentsTree = ({comments, sendComment}) => {
@@ -43,79 +45,105 @@ const PromotionModalCommentsTree = ({comments, sendComment}) => {
         return <div>Carregando...</div>
     }
 
+
     function renderItem(item){
         return (
             <LiComments key={item.user.id}>
-                    <img src={item.user.avatarUrl} alt={`Foto de ${item.user.name}`} />
-                    <div className="usuario-dados">
-                        <div className="usuario-info">
-                            <span>{item.user.name}</span>
-                            <div className="comentario">
-                                {item.comment}
-                            </div>
-                            <button 
-                                type="button" 
-                                className="button-responder"
-                                onClick={() => {
-                                    setComment('');
-                                    setActiveCommentBox(activeCommentBox === item.id ? null : item.id );
-                                }}  
-                            >Responder</button>
-                        </div>
-                       
-                       {activeCommentBox === item.id && (
-                           <div className="box-comentarios">
-                                <textarea  value={comment} onChange={(ev) => setComment(ev.target.value) }  />
+                    <div>
+                        <img src={item.user.avatarUrl} alt={`Foto de ${item.user.name}`} />
+                        <div className="usuario-dados">
+                            
+                            <div className="usuario-info">
+                                <span>{item.user.name}</span>
+                                <div className="comentario">
+                                    {item.comment}
+                                </div>
                                 <button 
                                     type="button" 
-                                    className="button-enviarResposta"
+                                    className="button-responder"
                                     onClick={() => {
-                                        sendComment(comment, item.id);
                                         setComment('');
-                                        setActiveCommentBox(null);
-                                    }}
-                                    
-                                    >Enviar</button>
-                           </div>
-                       )}
+                                        setActiveCommentBox(activeCommentBox === item.id ? null : item.id );
+                                    }}  
+                                    >Responder
+                                </button>
+                            </div>
+                        
+                        {activeCommentBox === item.id && (
+                            <div className="box-comentarios">
+                                    <textarea placeholder="Digite aqui sua resposta..." value={comment} onChange={(ev) => setComment(ev.target.value) }  />                                
+                                    <button 
+                                        type="button" 
+                                        className="button-enviarResposta"
+                                        onClick={() => {
+                                            sendComment(comment, item.id);
+                                            setComment('');
+                                            setActiveCommentBox(null);
+                                        }}
+                                        
+                                    >Enviar
+                                    </button>
+                            </div>
+                        )}
 
-                    {item.children && renderList(item.children)}
-                    </div>        
-                </LiComments>
+                    
+                        </div> 
+                    </div>    
+
+                    {/*   */} 
+                    {item.children && 
+                        <div className="children-comment">
+                               {renderList(item.children)}
+                        </div>
+                     
+                    
+                    }
+  
+            </LiComments>
         )
     }
 
     function renderList(list){
         return(
-            <ul>
+            <ul className="ul-arvore">
                 {list.map(renderItem)}
             </ul>
+           
         )
     }
 
     return renderList(tree)
-
 }
 
 PromotionModalCommentsTree.defaultProps = {
     sendComment: () => {}
 }
 
+
 export default PromotionModalCommentsTree;
 
 const LiComments = styled.li`
     display: flex;
-    flex-direction: row;
-    margin-bottom: 15px;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+    .ul-arvore{
+    
+    }
+    .children-comment{
+        margin-left: 40px;
+    }
 
     img{
         max-width: 60px;
         max-height: 60px;
         border-radius: 100%
     }
+
     .usuario-dados{
         display: flex;
         flex-direction: column;
+        padding: 0;
 
         .usuario-info{
             height: 70px;
@@ -126,13 +154,14 @@ const LiComments = styled.li`
 
         .comentario{
             margin-left: 12px;
-
         }
+
         span{
             margin-left: 12px;
             color: blue;
             font-weight: bold;
         }
+
         .button-responder{
             background-color: transparent;
             color: blue;
@@ -155,6 +184,7 @@ const LiComments = styled.li`
                 margin-left: 15px;
                 cursor: pointer;
 
+                
                 &:hover{
                     background-color: rgba(0,150,0,.5);
                 }

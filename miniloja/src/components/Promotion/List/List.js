@@ -36,6 +36,7 @@ const PromotionList = ({loading, error, promotions}) => {
             {
                 promotionId &&(
                     <PromotionModal 
+                        key={promotionId}
                         promotionId={promotionId} 
                         onClickClose={() => setPromotionId(null)} 
                     />

@@ -6,8 +6,9 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
     return(
         <Layout> 
             <Item>
-                
-                <img alt="Tenis" src={promotion.imgURL}  width="100" height="100"/>
+                <div>
+                    <img alt="Tenis" src={promotion.imgURL}  width="100" height="100"/>
+                </div>
             
                 <Info key={promotion.id}>
                     <h1>{promotion.title}</h1>
@@ -34,21 +35,17 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
 export default PromotionCard;
 
 const Layout = style.div`
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 13px;
-  
-
+   
     align-items: center;
     font-family: 'Roboto', sans-serif;
 `;
 
 const Item = style.div`
     display: flex;
-    width: 100%;
-    min-height: 120px;
+    width: 400px;
 
+    min-height: 200px;
+    margin-bottom: 15px;
     border: 2px solid black;
     border-radius: 8px;
     align-items: flex-start;
