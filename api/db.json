@@ -2,27 +2,31 @@
   "promotions": [
     {
       "id": 1,
-      "title": "Tenis BWhite",
-      "price": 650,
-      "imgURL": "https://t-static.dafiti.com.br/WtGHm3zjSHgeT9e794Ldmrtx2DI=/fit-in/430x623/static.dafiti.com.br/p/rebento-t%c3%aanis-sneaker-leve-masculino-conforto-preto-8925-3237736-2-zoom.jpg"
+      "title": "Pera",
+      "price": 15,
+      "comentario": "Açai sem nada",
+      "imgURL": "https://swiftbr.vteximg.com.br/arquivos/ids/170393-768-768/acai-swift-500g-617247-3.jpg?v=637426133465400000"
     },
     {
-      "title": "TenisBlack",
-      "imgURL": "https://static.netshoes.com.br/produtos/tenis-olympikus-proof-masculino/88/2I2-1749-088/2I2-1749-088_zoom1.jpg?ts=1615412391&ims=544x",
-      "price": 150,
+      "title": "Açai Tem Tudo",
+      "imgURL": "https://acailife.com/wp-content/uploads/2021/01/Loaded-and-Layered-Breakfast-Jar-1024x768.jpg",
+      "price": 50,
+      "comentario": "Açai sem nada",
       "id": 2
     },
     {
       "id": 3,
-      "title": "Camiseta Gucci",
-      "price": 1975,
-      "imgURL": "https://cdn.awsli.com.br/600x1000/866/866032/produto/41146004/e5b0dd8a5a.jpg"
+      "title": "Açai Combo Padrão",
+      "price": 8,
+      "comentario": "Açai sem nada",
+      "imgURL": "https://foodbase.com.br/storage/app/media/news/2022/02-fev/3-dicas-para-um-bom-acai-co.jpg"
     },
     {
       "id": 4,
-      "title": "Patinete FireWater",
-      "price": 555,
-      "imgURL": "https://a-static.mlcdn.com.br/618x463/patinete-infantil-dobravel-reforcado-color-50kg-inmetro-lotus/gastaki1/10025a/ed7eae7fcaa4aa8fdca95b243a6294f3.jpg"
+      "title": "Açai Puro",
+      "price": 10,
+      "comentario": "Açai sem nada",
+      "imgURL": "https://static1.conquistesuavida.com.br/articles//9/86/19/@/26524-acai-na-tigela-se-tornou-comum-em-cidade-article_block_media_large-2.jpg"
     }
   ],
   "comments": [
@@ -63,6 +67,25 @@
       "comment": "teste2",
       "parentId": 5,
       "id": 6
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "Açaí podre",
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "Bom",
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "S",
+      "parentId": 7,
+      "id": 9
     }
   ],
   "users": [

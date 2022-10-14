@@ -15,7 +15,7 @@ const PromotionCard = ( {promotion, onClickComments} )  => {
                     <span>R$ {promotion.price}</span>
                     <footer>
                         <div className="comentario">
-                            { promotion.comments.length > 0 && (<div>{promotion.comments[0].comment}</div>)}
+                            {promotion.comentario}
                         </div>
                         <button className="comentarios-irParaOsite" onClick={onClickComments}>
                             {promotion.comments.length} {" "}

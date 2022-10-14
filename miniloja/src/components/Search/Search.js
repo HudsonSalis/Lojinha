@@ -71,7 +71,7 @@ const PromotionSearch = () => {
             <Section>    
                 <div className="header">
                     <div className="titulo-Header">
-                        <h1> Mini Loja</h1>
+                        <h1> M A</h1>
                     </div>
                 </div>
              
@@ -130,7 +130,7 @@ const Section = style.section`
         width: 100%;
         height: 15vh;
        
-        background-color: rgba(0,0,0,0.80);
+        background-color: purple;
         color: white;        
     }
    .titulo-Header{
