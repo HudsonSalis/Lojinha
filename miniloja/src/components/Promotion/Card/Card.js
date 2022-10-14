@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const PromotionCard = ( {promotion, onClickComments} )  => {
     return(
         <Layout> 
-            <Item>
+            <Item> 
                 <div className="item-imagem">
                     <img alt="Tenis" src={promotion.imgURL}  width="100" height="100"/>
                 </div>
@@ -92,6 +92,10 @@ const Info = style.div`
         display: flex;
         align-items: center;
         width: 350px;
+
+        .comentario{
+            color: rgba(0,35,150);
+        }
 
         .comentario{
             color: rgba(0,35,150);
