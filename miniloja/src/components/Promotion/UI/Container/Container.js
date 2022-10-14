@@ -10,13 +10,11 @@ const UIContainer = ({ children }) => {
     )
 }
 
-
-
-
-
 export default UIContainer;
 
 const UIcontainer = style.div`
     max-width: 800px;
-    margin: 30px auto;
+    background-color: rgba(163, 1, 180, 0.2);
+
+    
 `;

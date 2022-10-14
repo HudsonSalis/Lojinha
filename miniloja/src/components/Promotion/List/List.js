@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PromotionCard from "../Card/Card";
 import PromotionModal from "../../Modal/Modal";
-
 //import style from "styled-components";
 
 const PromotionList = ({loading, error, promotions}) => {
@@ -12,7 +11,7 @@ const PromotionList = ({loading, error, promotions}) => {
         return <div>Algo deu errado!!!</div>
     }
 
-    if(loading || promotions == null){
+    if(promotions === null){
         return <div> Carregando...</div>
         
     }
@@ -20,33 +19,33 @@ const PromotionList = ({loading, error, promotions}) => {
         return <div> Nenhum resultado encontrado</div>;
     }
 
-
     return(
         <div>
             {promotions.map((promotion) => (
                 <PromotionCard 
                     promotion={promotion} 
                     onClickComments={() => setPromotionId(promotion.id)} 
+                    key={promotion.id}
                 />
+            ))} 
 
-                
-            ))}
-            
+            {loading && (
+                <div>Carregando mais promoções... </div>
+            )}     
+
             {
                 promotionId &&(
                     <PromotionModal 
+                        key={promotionId}
                         promotionId={promotionId} 
                         onClickClose={() => setPromotionId(null)} 
                     />
                 )
             }
-           
-        
         </div>
     )
-        
-
-
 }
 
 export default PromotionList;   
+
+
